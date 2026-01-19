@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baxnaano Pharmacy & Veterinary</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        medical: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            500: '#6366f1', // Indigo 500
+                            600: '#4f46e5', // Indigo 600
+                            900: '#312e81',
+                        },
+                        vet: {
+                            50: '#f0fdf4',
+                            500: '#10b981', // Emerald 500
+                            600: '#059669', // Emerald 600
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans antialiased dark">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md border-b border-gray-100">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="./index.html" class="flex items-center gap-3">
+                <img src="./assets/images/logo.png" alt="Baxnaano Logo" class="h-10 w-auto object-contain">
+                <div class="leading-tight hidden sm:block">
+                    <h1 class="text-2xl font-extrabold text-black tracking-tight">
+                        Baxnaano
+                    </h1>
+                    <span class="text-sm text-vet-600 font-semibold opacity-90">Pharmacy & Veterinary</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-black">
+                <a href="./index.html" class="hover:text-vet-600 active:text-vet-700 transition-colors font-semibold"
+                    data-i18n="true" data-so="Hoyga" data-en="Home">Home</a>
+                <a href="#gallery" class="text-vet-600 font-bold transition-colors" data-i18n="true" data-so="Sawirro"
+                    data-en="Gallery">Gallery</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+
+                <!-- Language Toggle -->
+                <button id="lang-toggle"
+                    class="flex items-center gap-1 font-bold text-sm border-2 border-black px-4 py-1.5 rounded-full hover:bg-black hover:text-white text-black transition-all">
+                    <i class="fas fa-globe"></i>
+                    <span id="lang-toggle-text">Somali</span>
+                </button>
+
+                <!-- Mobile Menu Btn -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-2xl text-black">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white text-black border-t border-gray-100 p-4 shadow-lg absolute w-full">
+            <div class="flex flex-col gap-4 font-semibold">
+                <a href="./index.html" class="block py-2 hover:text-vet-600 active:text-vet-700 transition-colors"
+                    data-i18n="true" data-so="Hoyga" data-en="Home">Home</a>
+                <a href="#gallery"
+                    class="block py-2 hover:text-vet-600 active:text-vet-700 transition-colors text-vet-600"
+                    data-i18n="true" data-so="Sawirro" data-en="Gallery">Gallery</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gallery Section (Top padded) -->
+    <div class="pt-20"></div>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 px-4 bg-gray-50 dark:bg-gray-800/50 relative overflow-hidden">
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-vet-600 font-bold tracking-widest uppercase text-sm" data-i18n="true"
+                    data-so="SAWIRROKA GUUD" data-en="OUR GALLERY">OUR GALLERY</span>
+                <h3 class="text-4xl md:text-5xl font-extrabold mt-2 mb-4 text-gradient-medical"
+                    data-en="Clinic & Activities">
+                    Clinic & Activities</h3>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-vet-500 to-medical-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Masonry Layout -->
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 max-w-7xl mx-auto">
+
+                <!-- Shared Home Images (Moved to Masonry) -->
+                <!-- Image 1 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/home/hero.jpg" alt="Clinic Exterior"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Clinic Entrance">Clinic Entrance</p>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/home/about.jpg" alt="Dr. Guleid"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Expert Care">Expert Care</p>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/home/dairy-support.jpeg" alt="Field Work"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Field Support">Field Support</p>
+                    </div>
+                </div>
+
+                <!-- Generated Gallery Images -->
+                <!-- Image 4: Lab Analysis -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/gallery/lab_analysis.jpg" alt="Lab Analysis"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Diagnostic Lab">Diagnostic Lab</p>
+                    </div>
+                </div>
+
+                <!-- Image 5: Pharmacy Shelves -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/gallery/pharmacy_shelves.jpg" alt="Pharmacy Inventory"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Well-Stocked Pharmacy">Well-Stocked Pharmacy
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Image 6: Surgery Room -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/gallery/surgery_room.jpg" alt="Modern Surgery"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Modern Surgery">Modern Surgery</p>
+                    </div>
+                </div>
+
+                <!-- User Provided Images -->
+                <!-- Photo 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/gallery/photo_2_2025-12-25_17-39-28.jpg" alt="Gallery Image"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Clinic Activity">Clinic Activity</p>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/gallery/photo_3_2025-12-25_17-39-28.jpg" alt="Gallery Image"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Clinic Activity">Clinic Activity</p>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/gallery/photo_4_2025-12-25_17-39-28.jpg" alt="Gallery Image"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Clinic Activity">Clinic Activity</p>
+                    </div>
+                </div>
+
+                <!-- Photo 5 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/gallery/photo_5_2025-12-25_17-39-28.jpg" alt="Gallery Image"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Clinic Activity">Clinic Activity</p>
+                    </div>
+                </div>
+
+                <!-- Photo 7 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/gallery/photo_7_2025-12-25_17-39-28.jpg" alt="Gallery Image"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Clinic Activity">Clinic Activity</p>
+                    </div>
+                </div>
+
+                <!-- Photo 8 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/gallery/photo_8_2025-12-25_17-39-28.jpg" alt="Gallery Image"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Clinic Activity">Clinic Activity</p>
+                    </div>
+                </div>
+
+                <!-- Photo 10 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg break-inside-avoid">
+                    <img src="./assets/images/gallery/photo_10_2025-12-25_17-39-28.jpg" alt="Gallery Image"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <p class="text-white font-bold text-lg" data-en="Clinic Activity">Clinic Activity</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="pt-12 pb-20 px-4 bg-white dark:bg-gray-900 relative">
+        <div class="container mx-auto relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-vet-600 font-bold tracking-widest uppercase text-sm" data-i18n="true"
+                    data-so="ADEEGYADA XIRIIRKA" data-en="GET IN TOUCH">GET IN TOUCH</span>
+                <h3 class="text-4xl md:text-5xl font-extrabold mt-2 mb-4 text-gradient-vet" data-i18n="true"
+                    data-so="Nala Soo Xiriir" data-en="Contact Us">
+                    Contact Us</h3>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-vet-500 to-medical-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div
+                class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                <!-- Contact Info -->
+                <div class="bg-vet-600 p-8 md:p-10 text-white md:w-2/5 flex flex-col h-full">
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt text-xl mt-1 opacity-80"></i>
+                            <div>
+                                <h4 class="font-bold text-sm opacity-90">Location:</h4>
+                                <p class="text-sm clinic-location">Arabsiyo, Somaliland</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-phone text-xl mt-1 opacity-80"></i>
+                            <div>
+                                <h4 class="font-bold text-sm opacity-90">Call:</h4>
+                                <p class="text-sm clinic-phone">+252 63 8877111</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-envelope text-xl mt-1 opacity-80"></i>
+                            <div>
+                                <h4 class="font-bold text-sm opacity-90">Email:</h4>
+                                <p class="text-sm clinic-email">Baxnaanovet@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fab fa-whatsapp text-2xl mt-1 text-green-400"></i>
+                            <div>
+                                <h4 class="font-bold text-sm opacity-90">WhatsApp:</h4>
+                                <a href="https://wa.me/252634631496" target="_blank"
+                                    class="text-sm hover:underline clinic-whatsapp">+252 63 4631496</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Map -->
+                    <div class="mt-auto pt-6 border-t border-white/10">
+                        <div class="flex items-center gap-2 mb-3 text-sm font-semibold opacity-90">
+                            <i class="fas fa-street-view text-lg"></i>
+                            <span data-en="Please visit our office" data-so="Fadlan xafiiskayaga soo booqo">Please visit
+                                our office</span>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden h-48 w-full shadow-inner bg-vet-700/50">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3933.015404866966!2d43.759441473536484!3d9.67972427846686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x162f4d559a08e74f%3A0x96eb7bce5b86697e!2sBAXNAANO%20PHARMACY%20%26%20VETERINARY%20CLINIC!5e0!3m2!1sen!2sus!4v1768831321676!5m2!1sen!2sus"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="w-full h-full border-0 opacity-80 hover:opacity-100 transition-opacity grayscale-[0.3]"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="p-8 md:p-12 md:w-3/5">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                                data-i18n="true" data-so="Magacaaga" data-en="Your Name">Your Name</label>
+                            <input type="text" name="name" required
+                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-vet-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                                data-i18n="true" data-so="Telefoonkaaga" data-en="Phone Number">Phone Number</label>
+                            <input type="tel" name="phone" required
+                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-vet-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                                data-i18n="true" data-so="Farriintaada" data-en="Message">Message</label>
+                            <textarea name="message" rows="4"
+                                class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-vet-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white outline-none transition-all"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-vet-600 hover:bg-vet-700 text-white font-bold py-3 rounded-lg shadow-md transition-colors"
+                            data-i18n="true" data-so="Dir Farriinta" data-en="Send Message">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-white mb-4">Baxnaano Pharmacy & Veterinary</h2>
+            <p class="mb-8 clinic-location">Arabsiyo, Somaliland</p>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="text-2xl hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-2xl hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="clinic-whatsapp text-2xl hover:text-white transition-colors"><i
+                        class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="text-sm">&copy; 2025 Powered by Jimcale Abthirahman.</p>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="./main.js"></script>
+</body>
+
+</html>

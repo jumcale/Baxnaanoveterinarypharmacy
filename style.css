@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary-medical: #6366f1;
+    /* Indigo 500 */
+    --secondary-medical: #4f46e5;
+    /* Indigo 600 */
+    --primary-vet: #10b981;
+    /* Emerald 500 */
+    --secondary-vet: #059669;
+    /* Emerald 600 */
+    --bg-dark: #020617;
+    /* Slate 950 */
+    --card-dark: #0f172a;
+    /* Slate 900 */
+    --transition-slow: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-mid: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-vet);
+}
+
+/* Enhanced Glassmorphism */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass-effect {
+    background: rgba(2, 6, 23, 0.75) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Hero Section - Ultra Deep Gradients */
+#home {
+    position: relative;
+    overflow: hidden;
+}
+
+#home::before,
+#home::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 0;
+    opacity: 0.4;
+    transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#home::before {
+    top: -15%;
+    left: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--primary-vet) 0%, #34d399 30%, transparent 70%);
+    animation: float-slow 20s infinite alternate;
+    transform: translate(calc(var(--mouse-x, 0) * 60px), calc(var(--mouse-y, 0) * 60px));
+}
+
+#home::after {
+    bottom: -20%;
+    right: -10%;
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, var(--primary-medical) 0%, #8b5cf6 30%, transparent 70%);
+    animation: float-slow 25s infinite alternate-reverse;
+    transform: translate(calc(var(--mouse-x, 0) * -60px), calc(var(--mouse-y, 0) * -60px));
+}
+
+@keyframes float-slow {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: translate(60px, -80px) rotate(10deg) scale(1.15);
+    }
+
+    100% {
+        transform: translate(-30px, 40px) rotate(-10deg) scale(1);
+    }
+}
+
+#home>div {
+    position: relative;
+    z-index: 10;
+}
+
+/* Premium Card & Hover Effects */
+.service-card {
+    transition: var(--transition-mid);
+    border: 1px solid transparent;
+}
+
+.dark .service-card {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-16px) scale(1.02);
+    border-color: rgba(99, 102, 241, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Glowing Elements */
+.glow-vet:hover {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+}
+
+.glow-medical:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+}
+
+/* Typography Enhancements */
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: -0.03em;
+}
+
+.text-gradient-medical {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-vet {
+    background: linear-gradient(135deg, #10b981, #2dd4bf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Masonry Layout Improvements */
+.break-inside-avoid {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    transition: var(--transition-mid);
+}
+
+.break-inside-avoid:hover {
+    transform: scale(1.03);
+    z-index: 20;
+}
+
+/* Button Refinement */
+.btn-premium {
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-mid);
+}
+
+.btn-premium::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-premium:hover::after {
+    left: 100%;
+}
+
+/* Dark Mode Overrides */
+.dark body {
+    background-color: var(--bg-dark);
+    color: #f1f5f9;
+}
+
+.dark .text-gray-600 {
+    color: #94a3b8;
+}
+
+.dark .text-gray-900 {
+    color: #f8fafc;
+}
+
+/* Contact Section refinement */
+#contact .bg-vet-600 {
+    background: linear-gradient(135deg, #059669, #0f766e);
+}
